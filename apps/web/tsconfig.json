@@ -1,0 +1,21 @@
+{
+  "extends": ["@2digits/tsconfig"],
+  "compilerOptions": {
+    "erasableSyntaxOnly": false,
+    "incremental": true,
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@payload-config": ["../../packages/payload/src/payload.config.ts"],
+      "@gh/payload/import-map": ["../../packages/payload/dist/import-map.ts"]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": ["**/*.ts", "**/*.tsx", "**/*.mjs", "next-env.d.ts", "next.config.ts", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}

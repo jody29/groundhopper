@@ -1,0 +1,4 @@
+{
+  "devCommand": "next dev --turbopack --port 3000",
+  "regions": ["cdg1", "dub1", "fra1"]
+}

@@ -13,6 +13,8 @@ catalog:
   '@t3-oss/env-core': 0.13.8
   '@types/node': 24.10.1
   '@types/react': 19.2.6
+  '@types/react-dom': 19.2.3
+  babel-plugin-react-compiler: 19.1.0-rc.3
   date-fns: 4.1.0
   eslint: 9.39.1
   graphql: 16.12.0

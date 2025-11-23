@@ -1,0 +1,16 @@
+{
+  "$schema": "../../node_modules/turbo/schema.json",
+  "extends": ["//"],
+  "tags": ["app"],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": [".next/**", "!node_modules/**"],
+      "env": ["NODE_ENV"]
+    },
+    "dev": {
+      "persistent": true,
+      "interactive": true
+    }
+  }
+}

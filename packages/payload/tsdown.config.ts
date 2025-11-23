@@ -8,7 +8,7 @@ import { generateTypes } from "payload/node";
 import { defineConfig } from "tsdown";
 
 export default defineConfig({
-  entry: ["./src/index.ts", "./src/env.ts", "./src/users.ts"],
+  entry: ["./src/index.ts", "./src/env.ts"],
 
   fixedExtension: true,
   shims: true,
