@@ -36,3 +36,35 @@ yarn-error.log*
 # Misc
 .DS_Store
 *.pem
+.env*.local
+
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+
+# Native
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Metro
+.metro-health-check*
+apps/native/android
+apps/native/ios
+
+# SQLite
+*.db
+*.db-shm
+*.db-wal
+
+payload-types.ts
+payload-generated-schema.ts
+tsup.config.bundled_*.mjs
+
+*.tsbuildinfo
+.eslintcache

@@ -1,21 +1,42 @@
 {
-  "$schema": "https://turborepo.com/schema.json",
+  "$schema": "./node_modules/turbo/schema.json",
   "ui": "tui",
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": [".next/**", "!.next/cache/**"]
-    },
-    "lint": {
-      "dependsOn": ["^lint"]
-    },
-    "check-types": {
-      "dependsOn": ["^check-types"]
+      "outputs": [".next/**", "!.next/cache/**", "dist/**"],
+      "outputLogs": "new-only"
     },
     "dev": {
+      "persistent": true,
       "cache": false,
-      "persistent": true
+      "interactive": true
+    },
+    "lint": {
+      "dependsOn": ["^build"],
+      "outputLogs": "new-only"
+    },
+    "lint:fix": {},
+    "//#lint:root": {
+      "outputLogs": "new-only"
+    },
+    "//#lint:root:fix": {},
+    "types": {
+      "dependsOn": ["^build"],
+      "outputs": ["tsconfig.tsbuildinfo", ".cache/tsbuildinfo.json"],
+      "outputLogs": "new-only"
+    },
+    "//#format": {
+      "outputs": ["node_modules/.cache/prettier/**"]
+    },
+    "//#format:fix": { "cache": false },
+    "env-pull": {
+      "dependsOn": ["//#env-link"],
+      "cache": false
+    },
+    "//#env-link": {
+      "inputs": ["./.vercel/*"],
+      "outputs": ["./.vercel/repo.json"]
     }
   }
 }

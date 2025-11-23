@@ -2,19 +2,42 @@
   "name": "groundhopper",
   "private": true,
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-types": "turbo run check-types"
+    "app": "turbo run dev -F @gh/native... --continue",
+    "build": "turbo run build deploy",
+    "check": "turbo run format lint types doctor lint:root --continue",
+    "cms": "turbo run dev -F @gh/web... --continue",
+    "dev": "turbo run dev --continue --concurrency=99",
+    "db:nuke": "rm ./packages/payload/src/database/payload.db",
+    "env-pull": "turbo run env-pull",
+    "fix": "turbo runo format:fix lint:fix lint:root:fix --continue",
+    "format": "prettier . --ignore-unknown --check --cache",
+    "format:fix": "prettier . --ignore-unknown --write --cache",
+    "lint": "turbo run lint lint:root",
+    "lint:fix": "turbo run lint:fix lint:root:fix",
+    "lint:root": "eslint .",
+    "lint:root:fix": "eslint . --fix",
+    "payload": "./scripts/payload",
+    "types": "turbo run types"
   },
   "devDependencies": {
-    "prettier": "^3.6.2",
-    "turbo": "^2.6.1",
-    "typescript": "5.9.2"
+    "@2digits/eslint-config": "catalog:",
+    "@2digits/prettier-config": "catalog:",
+    "@2digits/tsconfig": "catalog:",
+    "@payloadcms/db-sqlite": "catalog:",
+    "@payloadcms/drizzle": "catalog:",
+    "@payloadcms/next": "catalog:",
+    "@payloadcms/ui": "catalog:",
+    "eslint": "catalog:",
+    "payload": "catalog:",
+    "payload-auth": "catalog:",
+    "prettier": "catalog:",
+    "turbo": "catalog:",
+    "typescript": "catalog:",
+    "vercel": "catalog:"
   },
-  "packageManager": "pnpm@9.0.0",
+  "packageManager": "pnpm@10.20.0",
   "engines": {
-    "node": ">=18"
-  }
+    "node": "22.21.1"
+  },
+  "prettier": "@2digits/prettier-config"
 }

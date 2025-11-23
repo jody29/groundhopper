@@ -1,0 +1,5 @@
+.prettierignore
+pnpm-lock.yaml
+/apss/web/src/app/(payload)/**
+/apps/native/src/assets/bootsplash
+/packages/payload/src/db/migrations/**

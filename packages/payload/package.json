@@ -1,0 +1,60 @@
+{
+  "name": "@gh/payload",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    },
+    "./import-map": {
+      "default": "./dist/import-map.ts"
+    },
+    "./env": "./src/env.ts",
+    "./*": {
+      "default": [
+        "./src/*.ts",
+        "./src/*.tsx"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "tsdown --config-loader unconfig",
+    "db:migrate": "payload migrate",
+    "dev": "tsdown --watch --config-loader unconfig",
+    "env-pull": "vercel env pull",
+    "lint": "eslint . --max-warnings 0",
+    "lint:fix": "eslint . --fix",
+    "payload": "PAYLOAD_CONFIG_PATH=src/payload.config.ts payload",
+    "types": "tsc --noEmit"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@t3-oss/env-core": "catalog:",
+    "date-fns": "catalog:",
+    "graphql": "catalog:",
+    "sharp": "catalog:",
+    "ufo": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@2digits/eslint-config": "catalog:",
+    "@2digits/tsconfig": "catalog:",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "eslint": "catalog:",
+    "jiti": "catalog:",
+    "next": "catalog:",
+    "payload": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "tsdown": "catalog:",
+    "typescript": "catalog:"
+  },
+  "peerDependencies": {
+    "next": "catalog:",
+    "payload": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:"
+  }
+}

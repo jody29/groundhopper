@@ -1,0 +1,22 @@
+{
+  "$schema": "../../node_modules/turbo/schema.json",
+  "extends": ["//"],
+  "tags": ["lib"],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["$TURBO_DEFAULT$", "!./src/payload-types.ts"],
+      "outputs": ["dist/**", "./src/payload-types.ts"]
+    },
+    "lint": {
+      "dependsOn": ["build"]
+    },
+    "types": {
+      "dependsOn": ["build"]
+    },
+    "db:migrate": {
+      "dependsOn": ["build"],
+      "cache": false
+    }
+  }
+}

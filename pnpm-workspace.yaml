@@ -1,3 +1,38 @@
 packages:
-  - "apps/*"
-  - "packages/*"
+  - apps/*
+  - packages/*
+
+catalog:
+  '@2digits/eslint-config': 4.13.6
+  '@2digits/prettier-config': 4.0.17
+  '@2digits/tsconfig': 0.8.4
+  '@payloadcms/db-sqlite': 3.62.0
+  '@payloadcms/drizzle': 3.62.0
+  '@payloadcms/next': 3.62.0
+  '@payloadcms/ui': 3.62.0
+  '@t3-oss/env-core': 0.13.8
+  '@types/node': 24.10.1
+  '@types/react': 19.2.6
+  date-fns: 4.1.0
+  eslint: 9.39.1
+  graphql: 16.12.0
+  jiti: 2.6.1
+  next: 16.0.3
+  payload: 3.62.0
+  payload-auth: 1.2.0
+  prettier: 3.6.2
+  react: 19.2.0
+  react-dom: 19.2.0
+  sharp: 0.34.5
+  tsdown: 0.16.6
+  turbo: 2.6.1
+  typescript: 5.9.2
+  ufo: 1.6.1
+  vercel: 48.8.0
+  zod: 4.1.12
+
+catalogMode: prefer
+
+cleanupUnusedCatalogs: true
+
+preferWorkspacePackages: true

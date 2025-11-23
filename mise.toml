@@ -1,0 +1,29 @@
+[tools]
+  "gem:cocoapods" = "1.16.2"
+  "npm:@fission-ai/openspec" = "0.13.0"
+  "npm:eas-cli" = "16.26.0"
+  "ubi:tursodatabase/turso-cli" = { version = "1.0.15", exe = "turso" }
+  aapt2 = "8.13.0-13719691"
+  ccache = "4.12.1"
+  gum = "0.17.0"
+  java = "zulu-23.32.11"
+  node = "22.21.1"
+  pnpm = "10.20.0"
+
+[env]
+  FORCE_COLOR = "1"
+  EXPO_USE_FAST_RESOLVER = "true"
+  NATIVEWIND_NATIVE = "native"
+  EXPO_PUBLIC_ENVIRONMENT = "develop"
+  EAS_BUILD_GIT_COMMIT_HASH = "{{ exec(command='git rev-parse HEAD') }}"
+  NODE_OPTIONS = "--no-deprecation"
+  _.path = ["{{config_root}}/scripts"]
+  _.file = ["{{config_root}}/apps/web/.env.local", "{{config_root}}/apps/native/.env.local"]
+  EXPO_NO_GIT_STATUS = "true"
+  PAYLOAD_URL = { value = "{{ exec(command='tailscale funnel status --json | jq -r \".Web | keys[0] | split(\\\":\\\")[0]\"') }}", tools = true }
+  EXPO_PUBLIC_API_URL = { value = "https://{{env.PAYLOAD_URL}}", tools = true }
+  TURBO_CONCURRENCY = "99"
+  EXPO_UNSTABLE_MCP_SERVER = "1"
+
+[settings]
+  pin = true
