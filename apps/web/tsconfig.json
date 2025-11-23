@@ -7,8 +7,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@payload-config": ["../../packages/payload/src/payload.config.ts"],
-      "@gh/payload/import-map": ["../../packages/payload/dist/import-map.ts"]
+      "@payload-config": ["../../packages/payload/src/payload.config.ts"]
     },
     "plugins": [
       {
