@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+'use client';
 
 import NextError from 'next/error';
 

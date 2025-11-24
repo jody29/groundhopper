@@ -43,6 +43,7 @@
     "VERCEL_URL",
     "NODE_OPTIONS",
     "FORCE_COLOR",
+    "NODE_ENV",
 
     "PAYLOAD_SECRET",
     "TURSO_DATABASE_URL",
