@@ -1,29 +1,32 @@
-import type { CollectionConfig } from "payload";
+import type { CollectionConfig } from 'payload';
 
 export const Matches: CollectionConfig = {
-  slug: "matches",
+  slug: 'matches',
+  access: {
+    read: () => true,
+  },
   fields: [
     {
-      name: "homeTeam",
-      type: "text",
+      name: 'homeTeam',
+      type: 'text',
       required: true,
     },
     {
-      name: "awayTeam",
-      type: "text",
+      name: 'awayTeam',
+      type: 'text',
       required: true,
     },
     {
-      name: "season",
-      type: "relationship",
-      relationTo: "seasons",
+      name: 'season',
+      type: 'relationship',
+      relationTo: 'seasons',
       required: true,
     },
     {
-      name: "seasonName",
-      type: "text",
+      name: 'seasonName',
+      type: 'text',
       admin: {
-        position: "sidebar",
+        position: 'sidebar',
       },
     },
   ],
@@ -32,7 +35,7 @@ export const Matches: CollectionConfig = {
       async ({ data, req }) => {
         if (data.seasonName) {
           const existing = await req.payload.find({
-            collection: "seasons",
+            collection: 'seasons',
             where: { name: { equals: data.seasonName } },
           });
 
@@ -40,9 +43,9 @@ export const Matches: CollectionConfig = {
             data.season = existing.docs[0]?.id;
           } else {
             const newSeason = await req.payload.create({
-              collection: "seasons",
+              collection: 'seasons',
               data: {
-                name: data.seasonName,
+                name: data.seasonName as string,
               },
             });
 

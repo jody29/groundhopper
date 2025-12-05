@@ -9,7 +9,7 @@ export const env = createEnv({
     TURSO_DATABASE_URL: z.string().min(1),
     TURSO_AUTH_TOKEN: z.string().min(1),
 
-    PAYLOAD_URL: z.string().overwrite(withHttps).pipe(z.url()).optional()
+    PAYLOAD_URL: z.string().overwrite(withHttps).pipe(z.url()).optional(),
   },
   runtimeEnvStrict: {
     PAYLOAD_SECRET: process.env.PAYLOAD_SECRET,

@@ -14,11 +14,7 @@ const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
 const serverURL =
-  process.env.NODE_ENV === 'development'
-  && !env.PAYLOAD_URL?.includes('localhost')
-  && !env.PAYLOAD_URL?.includes('127.0.0.1')
-    ? 'http://localhost:3000'
-    : env.PAYLOAD_URL;
+  process.env.NODE_ENV === 'development' && !env.PAYLOAD_URL ? 'http://localhost:3000' : env.PAYLOAD_URL;
 
 export default buildConfig({
   debug: env.VERCEL_ENV !== 'production',

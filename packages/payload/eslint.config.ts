@@ -1,14 +1,14 @@
-import twoDigits from "@2digits/eslint-config";
+import twoDigits from '@2digits/eslint-config';
 
 export default twoDigits(
   {
     ignores: {
-      ignores: ["src/db/migrations/**"],
+      ignores: ['src/db/migrations/**'],
     },
   },
   {
     rules: {
-      "unicorn/prefer-single-call": "off",
+      'unicorn/prefer-single-call': 'off',
     },
-  }
+  },
 );

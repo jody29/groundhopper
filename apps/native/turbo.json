@@ -1,0 +1,26 @@
+{
+  "$schema": "../../node_modules/turbo/schema.json",
+  "extends": ["//"],
+  "tags": ["app"],
+  "tasks": {
+    "doctor": {
+      "outputLogs": "new-only"
+    },
+    "prebuild": {
+      "cache": false
+    },
+    "dev": {
+      "persistent": true,
+      "cache": false,
+      "interactive": true
+    },
+    "app:ios": {
+      "persistent": true,
+      "cache": false
+    },
+    "app:android": {
+      "persistent": true,
+      "cache": false
+    }
+  }
+}

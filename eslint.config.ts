@@ -1,7 +1,7 @@
-import twoDigits from "@2digits/eslint-config";
+import twoDigits from '@2digits/eslint-config';
 
 export default twoDigits({
   ignores: {
-    ignores: ["apps/**", "packages/**", "**/*.md/*.ts", "prds/**"],
+    ignores: ['apps/**', 'packages/**', '**/*.md/*.ts', 'prds/**', 'openspec/**', '.opencode/package.json'],
   },
 });
